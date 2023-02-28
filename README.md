@@ -3,7 +3,7 @@
 ## 其他配置已完成
 - [x] antd-vue v3按需加载
 - [x] vite版动态路由
-- [x] git提交规范
+- [x] git提交规范 husky
 
 ## 动态路由权限
 - 动态路由无需创建router配置
