@@ -1,9 +1,9 @@
 <template>
-  <div>temp</div>
+  <h3>401了</h3>
 </template>
 
 <script>
 export default {
-  name: "PageU"
+  name: "401"
 }
 </script>

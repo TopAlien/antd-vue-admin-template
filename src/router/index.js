@@ -1,41 +1,49 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-const routes = [
+export const routes = [
     {
         path: '/',
-        name: 'newRouter',
-        redirect: '/title',
-        meta: { title: '仪表盘', keepAlive: true, icon: 'a-icon', },
+        name: 'Root',
+        redirect: '/welcome',
+        component: () => import('layout/index.vue'),
         children: [
             {
-                path: 'ahaha',
-                name: 'ahaha1231',
-                component: () => import('components/HelloWorld.vue'),
-                meta: { title: '分析页1', keepAlive: true }
+              path: 'welcome',
+              name: 'Welcome',
+              component: () => import('pages/welcome/index.vue'),
+              meta: {
+                  title: "Welcome",
+                  hideInMenu: true
+              }
             },
             {
-                path: 'https://pro.loacg.com/docs/getting-started',
-                name: 'docs',
+                path: 'https://www.antdv.com/components/button-cn',
+                name: 'AntdDocs',
                 meta: {
-                    title: '文档',
+                    title: 'AntdVue文档',
                     target: '_blank'
                 }
             },
-            {
-                path: "title",
-                name: 'router-name',
-                meta: { title: 'test' },
-                children: [
-                    {
-                        path: 'ahaha123',
-                        name: 'ahaha',
-                        component: () => import('components/PageU.vue'),
-                        meta: { title: '分析页2123' }
-                    }
-                ]
-            }
         ]
     },
+    {
+        path: '/login',
+        name: 'Login',
+        component: () => import('pages/login/index.vue'),
+        meta: {
+            title: "Login",
+            hideInMenu: true
+        }
+    },
+    // {
+    //     path: '/:pathMatch(.*)*',
+    //     name: 'NotFound',
+    //     component: () => import('pages/exception/404.vue'),
+    //     meta: {
+    //         title: '404',
+    //         hideInMenu: true
+    //     }
+    // }
 ]
 
 const router = createRouter({

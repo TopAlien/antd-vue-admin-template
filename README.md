@@ -8,12 +8,13 @@
 ## 动态路由权限
 - 动态路由无需创建router配置
 - 根据页面配置信息约定页面配置（1、指定页面文件目录位置；2、指定路由path等）
+- * 指定页面文件目录位置时该页面只能存在与pages目录下，如需配置其他文件夹内容可修改 。。。 文件
 
 ## antd-pro-layout补充文档 
 - 详见： https://www.npmjs.com/package/@ant-design-vue/pro-layout
 - router 必须在根目录 / 下children中定义 详见pro-layout源码
 ```js
-  import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout';
+import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout';
 const getMenuData = (routes) => {
     const childrenRoute = routes.find((route) => route.path === "/");
     const breadcrumb = {};
@@ -34,6 +35,7 @@ const menusDataItem = {
     meta: { 
         title: 'test',
         hideInMenu: true, // 菜单栏中隐藏
+        target: '_blank' // 跳转窗口
     },
     children: [
         {

@@ -20,8 +20,8 @@
 
   const state = reactive({
     collapsed: false,
-    openKeys: ['/title'],
-    selectedKeys: ['/title/ahaha123'],
+    openKeys: [],
+    selectedKeys: [],
   })
 
   const layoutConfig = reactive({
